@@ -1,15 +1,15 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "SettingsPack.h"
+#include "UserInterfacePack.h"
 
 #define LOCTEXT_NAMESPACE "FSettingsPackModule"
 
-void FSettingsPackModule::StartupModule()
+void FUserInterfacePack::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 }
 
-void FSettingsPackModule::ShutdownModule()
+void FUserInterfacePack::ShutdownModule()
 {
 	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
 	// we call this function before unloading the module.
@@ -17,4 +17,4 @@ void FSettingsPackModule::ShutdownModule()
 
 #undef LOCTEXT_NAMESPACE
 	
-IMPLEMENT_MODULE(FSettingsPackModule, SettingsPack)
+IMPLEMENT_MODULE(FUserInterfacePack, UserInterfacePack)
