@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-class FSettingsPackModule : public IModuleInterface
+class FUserInterfacePack : public IModuleInterface
 {
 public:
 

@@ -10,7 +10,7 @@
  * Data asset for UI style
  */
 UCLASS(Blueprintable, BlueprintType)
-class SETTINGSPACK_API UUserInterfaceDataAsset : public UDataAsset
+class USERINTERFACEPACK_API UUserInterfaceDataAsset : public UDataAsset
 {
 	GENERATED_BODY()
 

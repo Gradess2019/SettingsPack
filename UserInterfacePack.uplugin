@@ -2,7 +2,7 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "SettingsPack",
+	"FriendlyName": "UserInterfacePack",
 	"Description": "",
 	"Category": "Other",
 	"CreatedBy": "Gradess",
@@ -16,7 +16,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "SettingsPack",
+			"Name": "UserInterfacePack",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}
