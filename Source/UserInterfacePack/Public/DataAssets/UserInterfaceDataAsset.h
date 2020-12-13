@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "Styling/SlateColor.h"
 #include "UserInterfaceDataAsset.generated.h"
 
 /**
