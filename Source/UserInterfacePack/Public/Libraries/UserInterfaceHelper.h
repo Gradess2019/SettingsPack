@@ -17,14 +17,14 @@ class USERINTERFACEPACK_API UUserInterfaceHelper : public UBlueprintFunctionLibr
 public:
 	
 	UFUNCTION(BlueprintCallable, Category = "UI Helper")
-	static FSlateBrush& SetTint(
-		FSlateBrush& SlateBrush,
+	static void SetTint(
+		UPARAM(ref) FSlateBrush& SlateBrush,
 		FSlateColor Color
 	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper")
-	static FButtonStyle& SetButtonTint(
-		FButtonStyle& ButtonStyle,
+	static void SetButtonTint(
+		UPARAM(ref) FButtonStyle& ButtonStyle,
 		FSlateColor Normal,
 		FSlateColor Hovered,
 		FSlateColor Pressed
