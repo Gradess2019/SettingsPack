@@ -4,10 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "UserInterfaceStructs.h"
 #include "UserInterfaceHelper.generated.h"
 
+class USizeBox;
+class UComboBoxString;
 /**
- * UserInterfcaePack helper
+ * UserInterfacePack helper
  */
 UCLASS()
 class USERINTERFACEPACK_API UUserInterfaceHelper : public UBlueprintFunctionLibrary
@@ -15,18 +18,31 @@ class USERINTERFACEPACK_API UUserInterfaceHelper : public UBlueprintFunctionLibr
 	GENERATED_BODY()
 
 public:
-	
-	UFUNCTION(BlueprintCallable, Category = "UI Helper")
+
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
 	static void SetTint(
 		UPARAM(ref) FSlateBrush& SlateBrush,
 		FSlateColor Color
 	);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper")
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
 	static void SetButtonTint(
 		UPARAM(ref) FButtonStyle& ButtonStyle,
-		FSlateColor Normal,
-		FSlateColor Hovered,
-		FSlateColor Pressed
+		FButtonColorData Data
 	);
+
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	static void SetComboBoxTintWidget(
+		UComboBoxString* ComboBox,
+		FComboBoxColorData Data
+	);
+	
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	static void SetComboBoxTint(
+		UPARAM(ref) FComboButtonStyle& ComboButtonStyle,
+		FTableRowStyle& ItemStyle, FComboBoxColorData Data
+	);
+
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Size box")
+	static void SetSize(USizeBox* SizeBox, float Width, float Height);
 };
