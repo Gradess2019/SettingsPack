@@ -11,44 +11,44 @@ void UUserInterfaceHelper::SetTint(FSlateBrush& SlateBrush, FSlateColor Color)
 
 void UUserInterfaceHelper::SetButtonTint(
 	FButtonStyle& ButtonStyle,
-	FButtonColorData Data
+	FButtonColorData ColorData
 )
 {
-	SetTint(ButtonStyle.Normal, Data.Normal);
-	SetTint(ButtonStyle.Hovered, Data.Hovered);
-	SetTint(ButtonStyle.Pressed, Data.Pressed);
+	SetTint(ButtonStyle.Normal, ColorData.Normal);
+	SetTint(ButtonStyle.Hovered, ColorData.Hovered);
+	SetTint(ButtonStyle.Pressed, ColorData.Pressed);
 }
 
-void UUserInterfaceHelper::SetComboBoxTintWidget(UComboBoxString* ComboBox, FComboBoxColorData Data)
+void UUserInterfaceHelper::SetComboBoxTintWidget(UComboBoxString* ComboBox, FComboBoxColorData ColorData)
 {
 	if (!IsValid(ComboBox)) { return; }
 
-	SetComboBoxTint(ComboBox->WidgetStyle.ComboButtonStyle, ComboBox->ItemStyle, Data);
+	SetComboBoxTint(ComboBox->WidgetStyle.ComboButtonStyle, ComboBox->ItemStyle, ColorData);
 }
 
 void UUserInterfaceHelper::SetComboBoxTint(
 	FComboButtonStyle& ComboButtonStyle,
 	FTableRowStyle& ItemStyle,
-	FComboBoxColorData Data
+	FComboBoxColorData ColorData
 )
 {
 	SetButtonTint(
 		ComboButtonStyle.ButtonStyle,
-		Data.Button
+		ColorData.Button
 	);
 
-	SetTint(ComboButtonStyle.DownArrowImage, Data.DownArrow);
-	SetTint(ComboButtonStyle.MenuBorderBrush, Data.MenuBorder);
+	SetTint(ComboButtonStyle.DownArrowImage, ColorData.DownArrow);
+	SetTint(ComboButtonStyle.MenuBorderBrush, ColorData.MenuBorder);
 
-	SetTint(ItemStyle.ActiveBrush, Data.Item.Active);
-	SetTint(ItemStyle.ActiveHoveredBrush, Data.Item.ActiveHovered);
-	SetTint(ItemStyle.InactiveBrush, Data.Item.Inactive);
-	SetTint(ItemStyle.InactiveHoveredBrush, Data.Item.InactiveHovered);
-	SetTint(ItemStyle.EvenRowBackgroundHoveredBrush, Data.Item.EvenRowHovered);
-	SetTint(ItemStyle.OddRowBackgroundHoveredBrush, Data.Item.OddRowHovered);
+	SetTint(ItemStyle.ActiveBrush, ColorData.Item.Active);
+	SetTint(ItemStyle.ActiveHoveredBrush, ColorData.Item.ActiveHovered);
+	SetTint(ItemStyle.InactiveBrush, ColorData.Item.Inactive);
+	SetTint(ItemStyle.InactiveHoveredBrush, ColorData.Item.InactiveHovered);
+	SetTint(ItemStyle.EvenRowBackgroundHoveredBrush, ColorData.Item.EvenRowHovered);
+	SetTint(ItemStyle.OddRowBackgroundHoveredBrush, ColorData.Item.OddRowHovered);
 
-	ItemStyle.TextColor = Data.Item.Text;
-	ItemStyle.SelectedTextColor = Data.Item.SelectedText;
+	ItemStyle.TextColor = ColorData.Item.Text;
+	ItemStyle.SelectedTextColor = ColorData.Item.SelectedText;
 }
 
 void UUserInterfaceHelper::SetSize(USizeBox* SizeBox, float Width, float Height)

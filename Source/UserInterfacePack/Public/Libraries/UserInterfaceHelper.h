@@ -28,19 +28,19 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
 	static void SetButtonTint(
 		UPARAM(ref) FButtonStyle& ButtonStyle,
-		FButtonColorData Data
+		FButtonColorData ColorData
 	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
 	static void SetComboBoxTintWidget(
 		UComboBoxString* ComboBox,
-		FComboBoxColorData Data
+		FComboBoxColorData ColorData
 	);
 	
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
 	static void SetComboBoxTint(
 		UPARAM(ref) FComboButtonStyle& ComboButtonStyle,
-		FTableRowStyle& ItemStyle, FComboBoxColorData Data
+		FTableRowStyle& ItemStyle, FComboBoxColorData ColorData
 	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Size box")
