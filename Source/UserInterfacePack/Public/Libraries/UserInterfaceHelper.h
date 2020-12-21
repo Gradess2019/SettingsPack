@@ -8,6 +8,7 @@
 #include "UserInterfaceHelper.generated.h"
 
 class USizeBox;
+class UBorder;
 class UComboBoxString;
 /**
  * UserInterfacePack helper
@@ -53,6 +54,9 @@ public:
 		FTableRowStyle& ItemStyle,
 		FComboBoxColorData ColorData
 	);
+
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+    static void SetBorderTintWidget(UBorder* Border, FSlateColor Color);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Size box")
 	static void SetSize(USizeBox* SizeBox, float Width, float Height);

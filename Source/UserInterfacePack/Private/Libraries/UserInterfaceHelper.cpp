@@ -2,6 +2,7 @@
 
 #include "Libraries/UserInterfaceHelper.h"
 #include "Components/SizeBox.h"
+#include "Components/Border.h"
 #include "Components/ComboBoxString.h"
 
 void UUserInterfaceHelper::SetTint(FSlateBrush& SlateBrush, FSlateColor Color)
@@ -62,6 +63,15 @@ void UUserInterfaceHelper::SetComboBoxTint(
 
 	if(!IsValid(OwnerWidget)) { return; }
 	OwnerWidget->SetForegroundColor(ColorData.ForegroundColor);
+}
+
+void UUserInterfaceHelper::SetBorderTintWidget(UBorder* Border, FSlateColor Color)
+{
+	if (!IsValid(Border)) { return; }
+
+	auto Brush = Border->Background;
+	Brush.TintColor = Color;
+	Border->SetBrush(Brush);
 }
 
 void UUserInterfaceHelper::SetSize(USizeBox* SizeBox, float Width, float Height)
