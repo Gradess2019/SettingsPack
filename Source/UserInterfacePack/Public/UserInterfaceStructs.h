@@ -52,6 +52,9 @@ USTRUCT(BlueprintType)
 struct FComboBoxColorData
 {
 	GENERATED_BODY()
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Color")
+	FSlateColor ForegroundColor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Color")
 	FButtonColorData Button;

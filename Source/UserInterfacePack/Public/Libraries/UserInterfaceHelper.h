@@ -31,16 +31,27 @@ public:
 		FButtonColorData ColorData
 	);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	UFUNCTION(
+		BlueprintCallable,
+		Category = "UI Helper | Style",
+		meta = (HidePin = "OwnerWidget", DefaultToSelf = "OwnerWidget")
+	)
 	static void SetComboBoxTintWidget(
+		UUserWidget* OwnerWidget,
 		UComboBoxString* ComboBox,
 		FComboBoxColorData ColorData
 	);
-	
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+
+	UFUNCTION(
+		BlueprintCallable,
+		Category = "UI Helper | Style",
+		meta = (HidePin = "OwnerWidget", DefaultToSelf = "OwnerWidget")
+	)
 	static void SetComboBoxTint(
+		UUserWidget* OwnerWidget,
 		UPARAM(ref) FComboButtonStyle& ComboButtonStyle,
-		FTableRowStyle& ItemStyle, FComboBoxColorData ColorData
+		FTableRowStyle& ItemStyle,
+		FComboBoxColorData ColorData
 	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Size box")

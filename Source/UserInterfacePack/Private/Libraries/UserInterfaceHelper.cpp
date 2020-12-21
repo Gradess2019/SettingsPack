@@ -19,14 +19,24 @@ void UUserInterfaceHelper::SetButtonTint(
 	SetTint(ButtonStyle.Pressed, ColorData.Pressed);
 }
 
-void UUserInterfaceHelper::SetComboBoxTintWidget(UComboBoxString* ComboBox, FComboBoxColorData ColorData)
+void UUserInterfaceHelper::SetComboBoxTintWidget(
+	UUserWidget* OwnerWidget,
+	UComboBoxString* ComboBox,
+	FComboBoxColorData ColorData
+)
 {
 	if (!IsValid(ComboBox)) { return; }
 
-	SetComboBoxTint(ComboBox->WidgetStyle.ComboButtonStyle, ComboBox->ItemStyle, ColorData);
+	SetComboBoxTint(
+		OwnerWidget,
+		ComboBox->WidgetStyle.ComboButtonStyle,
+		ComboBox->ItemStyle,
+		ColorData
+	);
 }
 
 void UUserInterfaceHelper::SetComboBoxTint(
+	UUserWidget* OwnerWidget,
 	FComboButtonStyle& ComboButtonStyle,
 	FTableRowStyle& ItemStyle,
 	FComboBoxColorData ColorData
@@ -49,6 +59,9 @@ void UUserInterfaceHelper::SetComboBoxTint(
 
 	ItemStyle.TextColor = ColorData.Item.Text;
 	ItemStyle.SelectedTextColor = ColorData.Item.SelectedText;
+
+	if(!IsValid(OwnerWidget)) { return; }
+	OwnerWidget->SetForegroundColor(ColorData.ForegroundColor);
 }
 
 void UUserInterfaceHelper::SetSize(USizeBox* SizeBox, float Width, float Height)
