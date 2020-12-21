@@ -56,7 +56,13 @@ public:
 	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
-    static void SetBorderTintWidget(UBorder* Border, FSlateColor Color);
+	static void SetBorderTintWidget(UBorder* Border, FSlateColor Color);
+
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	static void SetCheckBoxTint(
+		UPARAM(ref) FCheckBoxStyle& CheckBoxStyle,
+		FCheckBoxColorData ColorData
+	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Size box")
 	static void SetSize(USizeBox* SizeBox, float Width, float Height);

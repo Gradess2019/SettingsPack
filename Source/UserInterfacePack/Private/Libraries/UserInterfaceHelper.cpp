@@ -74,6 +74,21 @@ void UUserInterfaceHelper::SetBorderTintWidget(UBorder* Border, FSlateColor Colo
 	Border->SetBrush(Brush);
 }
 
+void UUserInterfaceHelper::SetCheckBoxTint(FCheckBoxStyle& CheckBoxStyle, FCheckBoxColorData ColorData)
+{
+	SetTint(CheckBoxStyle.UncheckedImage, ColorData.Unchecked);
+	SetTint(CheckBoxStyle.UncheckedHoveredImage, ColorData.UncheckedHovered);
+	SetTint(CheckBoxStyle.UncheckedPressedImage, ColorData.UncheckedPressed);
+
+	SetTint(CheckBoxStyle.CheckedImage, ColorData.Checked);
+	SetTint(CheckBoxStyle.CheckedHoveredImage, ColorData.CheckedHovered);
+	SetTint(CheckBoxStyle.CheckedPressedImage, ColorData.CheckedPressed);
+
+	SetTint(CheckBoxStyle.UndeterminedImage, ColorData.Undetermined);
+	SetTint(CheckBoxStyle.UndeterminedHoveredImage, ColorData.UndeterminedHovered);
+	SetTint(CheckBoxStyle.UndeterminedPressedImage, ColorData.UndeterminedPressed);
+}
+
 void UUserInterfaceHelper::SetSize(USizeBox* SizeBox, float Width, float Height)
 {
 	if (!IsValid(SizeBox)) { return; }
