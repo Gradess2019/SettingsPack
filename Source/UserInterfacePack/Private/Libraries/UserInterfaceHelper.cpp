@@ -96,6 +96,15 @@ void UUserInterfaceHelper::SetProgressBarTint(FProgressBarStyle& ProgressBarStyl
 	SetTint(ProgressBarStyle.MarqueeImage, ColorData.Marquee);
 }
 
+void UUserInterfaceHelper::SetSliderTint(FSliderStyle& SliderStyle, FSliderColorData ColorData)
+{
+	SetTint(SliderStyle.NormalBarImage, ColorData.NormalBar);
+	SetTint(SliderStyle.HoveredBarImage, ColorData.HoveredBar);
+	SetTint(SliderStyle.DisabledBarImage, ColorData.DisabledBar);
+	SetTint(SliderStyle.NormalThumbImage, ColorData.NormalThumb);
+	SetTint(SliderStyle.HoveredThumbImage, ColorData.HoveredThumb);
+}
+
 void UUserInterfaceHelper::SetSize(USizeBox* SizeBox, float Width, float Height)
 {
 	if (!IsValid(SizeBox)) { return; }
