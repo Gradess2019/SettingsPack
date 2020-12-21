@@ -102,3 +102,18 @@ struct FCheckBoxColorData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
 	FSlateColor UndeterminedPressed;
 };
+
+USTRUCT(BlueprintType)
+struct FProgressBarColorData
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor Background;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor Fill;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor Marquee;
+};
