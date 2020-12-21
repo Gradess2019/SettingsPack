@@ -117,3 +117,24 @@ struct FProgressBarColorData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
 	FSlateColor Marquee;
 };
+
+USTRUCT(BlueprintType)
+struct FSliderColorData
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor NormalBar;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor HoveredBar;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor DisabledBar;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor NormalThumb;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor HoveredThumb;
+};
