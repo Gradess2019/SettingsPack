@@ -8,13 +8,13 @@ struct FButtonColorData
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Color")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Color")
 	FSlateColor Normal;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Color")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Color")
 	FSlateColor Hovered;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Color")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Color")
 	FSlateColor Pressed;
 };
 
@@ -38,13 +38,13 @@ struct FTableRowColorData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Table Row Color")
 	FSlateColor EvenRowHovered;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Style")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Table Row Style")
 	FSlateColor OddRowHovered;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Style")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Table Row Style")
 	FSlateColor Text;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Style")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Table Row Style")
 	FSlateColor SelectedText;
 };
 
@@ -67,4 +67,38 @@ struct FComboBoxColorData
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo Box Color")
 	FTableRowColorData Item;
+};
+
+
+USTRUCT(BlueprintType)
+struct FCheckBoxColorData
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor Unchecked;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor UncheckedHovered;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor UncheckedPressed;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor Checked;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor CheckedHovered;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor CheckedPressed;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor Undetermined;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor UndeterminedHovered;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Color")
+	FSlateColor UndeterminedPressed;
 };
