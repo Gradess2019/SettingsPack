@@ -89,6 +89,13 @@ void UUserInterfaceHelper::SetCheckBoxTint(FCheckBoxStyle& CheckBoxStyle, FCheck
 	SetTint(CheckBoxStyle.UndeterminedPressedImage, ColorData.UndeterminedPressed);
 }
 
+void UUserInterfaceHelper::SetProgressBarTint(FProgressBarStyle& ProgressBarStyle, FProgressBarColorData ColorData)
+{
+	SetTint(ProgressBarStyle.BackgroundImage, ColorData.Background);
+	SetTint(ProgressBarStyle.FillImage, ColorData.Fill);
+	SetTint(ProgressBarStyle.MarqueeImage, ColorData.Marquee);
+}
+
 void UUserInterfaceHelper::SetSize(USizeBox* SizeBox, float Width, float Height)
 {
 	if (!IsValid(SizeBox)) { return; }
