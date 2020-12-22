@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "UserInterfaceStructs.h"
+#include "Styling/SlateTypes.h"
 #include "UserInterfaceHelper.generated.h"
 
 class USizeBox;
