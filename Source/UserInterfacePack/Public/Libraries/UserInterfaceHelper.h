@@ -20,62 +20,71 @@ class USERINTERFACEPACK_API UUserInterfaceHelper : public UBlueprintFunctionLibr
 
 public:
 
+	/** Set Tint param in Slate Brush */
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
 	static void SetTint(
 		UPARAM(ref) FSlateBrush& SlateBrush,
-		FSlateColor Color
+		const FSlateColor Color
 	);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	/** Set button tints using style reference */
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style | Button")
 	static void SetButtonTint(
 		UPARAM(ref) FButtonStyle& ButtonStyle,
-		FButtonColorData ColorData
+		const FButtonColorData ColorData
 	);
 
+	/** Set combo box tints using widget */
 	UFUNCTION(
 		BlueprintCallable,
-		Category = "UI Helper | Style",
+		Category = "UI Helper | Style | Combo Box",
 		meta = (HidePin = "OwnerWidget", DefaultToSelf = "OwnerWidget")
 	)
 	static void SetComboBoxTintWidget(
 		UUserWidget* OwnerWidget,
 		UComboBoxString* ComboBox,
-		FComboBoxColorData ColorData
+		const FComboBoxColorData ColorData
 	);
 
+	/** Set combo box tints using style reference */
 	UFUNCTION(
 		BlueprintCallable,
-		Category = "UI Helper | Style",
+		Category = "UI Helper | Style | Combo Box",
 		meta = (HidePin = "OwnerWidget", DefaultToSelf = "OwnerWidget")
 	)
 	static void SetComboBoxTint(
 		UUserWidget* OwnerWidget,
 		UPARAM(ref) FComboButtonStyle& ComboButtonStyle,
 		FTableRowStyle& ItemStyle,
-		FComboBoxColorData ColorData
+		const FComboBoxColorData ColorData
 	);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
-	static void SetBorderTintWidget(UBorder* Border, FSlateColor Color);
+	/** Set border tint using widget */
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style | Border")
+	static void SetBorderTintWidget(UBorder* Border, const FSlateColor Color);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	/** Set check box tints using style reference */
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style | Check Box")
 	static void SetCheckBoxTint(
 		UPARAM(ref) FCheckBoxStyle& CheckBoxStyle,
-		FCheckBoxColorData ColorData
+		const FCheckBoxColorData ColorData
 	);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	/** Set progress bar tints using style reference */
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style | Progress Bar")
 	static void SetProgressBarTint(
 		UPARAM(ref) FProgressBarStyle& ProgressBarStyle,
-		FProgressBarColorData ColorData
+		const FProgressBarColorData ColorData
 	);
 
-	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style")
+	/** Set slider tints using style reference */
+	UFUNCTION(BlueprintCallable, Category = "UI Helper | Style | Slider")
 	static void SetSliderTint(
 		UPARAM(ref) FSliderStyle& SliderStyle,
-		FSliderColorData ColorData
+		const FSliderColorData ColorData
 	);
 
+	/** Set size overrides of USizeBox */
 	UFUNCTION(BlueprintCallable, Category = "UI Helper | Size box")
 	static void SetSize(USizeBox* SizeBox, float Width, float Height);
 };

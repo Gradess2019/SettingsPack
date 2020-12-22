@@ -5,14 +5,14 @@
 #include "Components/Border.h"
 #include "Components/ComboBoxString.h"
 
-void UUserInterfaceHelper::SetTint(FSlateBrush& SlateBrush, FSlateColor Color)
+void UUserInterfaceHelper::SetTint(FSlateBrush& SlateBrush, const FSlateColor Color)
 {
 	SlateBrush.TintColor = Color;
 }
 
 void UUserInterfaceHelper::SetButtonTint(
 	FButtonStyle& ButtonStyle,
-	FButtonColorData ColorData
+	const FButtonColorData ColorData
 )
 {
 	SetTint(ButtonStyle.Normal, ColorData.Normal);
@@ -23,7 +23,7 @@ void UUserInterfaceHelper::SetButtonTint(
 void UUserInterfaceHelper::SetComboBoxTintWidget(
 	UUserWidget* OwnerWidget,
 	UComboBoxString* ComboBox,
-	FComboBoxColorData ColorData
+	const FComboBoxColorData ColorData
 )
 {
 	if (!IsValid(ComboBox)) { return; }
@@ -40,7 +40,7 @@ void UUserInterfaceHelper::SetComboBoxTint(
 	UUserWidget* OwnerWidget,
 	FComboButtonStyle& ComboButtonStyle,
 	FTableRowStyle& ItemStyle,
-	FComboBoxColorData ColorData
+	const FComboBoxColorData ColorData
 )
 {
 	SetButtonTint(
@@ -65,7 +65,7 @@ void UUserInterfaceHelper::SetComboBoxTint(
 	OwnerWidget->SetForegroundColor(ColorData.ForegroundColor);
 }
 
-void UUserInterfaceHelper::SetBorderTintWidget(UBorder* Border, FSlateColor Color)
+void UUserInterfaceHelper::SetBorderTintWidget(UBorder* Border, const FSlateColor Color)
 {
 	if (!IsValid(Border)) { return; }
 
@@ -74,7 +74,7 @@ void UUserInterfaceHelper::SetBorderTintWidget(UBorder* Border, FSlateColor Colo
 	Border->SetBrush(Brush);
 }
 
-void UUserInterfaceHelper::SetCheckBoxTint(FCheckBoxStyle& CheckBoxStyle, FCheckBoxColorData ColorData)
+void UUserInterfaceHelper::SetCheckBoxTint(FCheckBoxStyle& CheckBoxStyle, const FCheckBoxColorData ColorData)
 {
 	SetTint(CheckBoxStyle.UncheckedImage, ColorData.Unchecked);
 	SetTint(CheckBoxStyle.UncheckedHoveredImage, ColorData.UncheckedHovered);
@@ -89,14 +89,14 @@ void UUserInterfaceHelper::SetCheckBoxTint(FCheckBoxStyle& CheckBoxStyle, FCheck
 	SetTint(CheckBoxStyle.UndeterminedPressedImage, ColorData.UndeterminedPressed);
 }
 
-void UUserInterfaceHelper::SetProgressBarTint(FProgressBarStyle& ProgressBarStyle, FProgressBarColorData ColorData)
+void UUserInterfaceHelper::SetProgressBarTint(FProgressBarStyle& ProgressBarStyle, const FProgressBarColorData ColorData)
 {
 	SetTint(ProgressBarStyle.BackgroundImage, ColorData.Background);
 	SetTint(ProgressBarStyle.FillImage, ColorData.Fill);
 	SetTint(ProgressBarStyle.MarqueeImage, ColorData.Marquee);
 }
 
-void UUserInterfaceHelper::SetSliderTint(FSliderStyle& SliderStyle, FSliderColorData ColorData)
+void UUserInterfaceHelper::SetSliderTint(FSliderStyle& SliderStyle, const FSliderColorData ColorData)
 {
 	SetTint(SliderStyle.NormalBarImage, ColorData.NormalBar);
 	SetTint(SliderStyle.HoveredBarImage, ColorData.HoveredBar);
